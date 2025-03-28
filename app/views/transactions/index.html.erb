@@ -1,0 +1,23 @@
+<h2>Pending Transactions</h2>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Amount</th>
+    <th>Transaction Code</th>
+    <th>Screenshot</th>
+    <th>Action</th>
+  </tr>
+
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.user.email %></td>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.transaction_code %></td>
+      <td><%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %></td>
+      <td>
+        <%= link_to "Approve", approve_transaction_path(transaction), method: :patch %> |
+        <%= link_to "Reject", reject_transaction_path(transaction), method: :patch %>
+      </td>
+    </tr>
+  <% end %>
+</table>

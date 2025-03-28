@@ -1,0 +1,18 @@
+<%= form_with model: @transaction, url: transactions_path, local: true, multipart: true do |f| %>
+  <div>
+    <%= f.label :amount, "Deposit Amount" %>
+    <%= f.number_field :amount, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :transaction_code, "Transaction Code" %>
+    <%= f.text_field :transaction_code, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :screenshot, "Upload Screenshot" %>
+    <%= f.file_field :screenshot, required: true %>
+  </div>
+
+  <%= f.submit "Submit Deposit" %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2>Transaction Details</h2>
+
+<p><strong>Amount:</strong> <%= @transaction.amount %></p>
+<p><strong>Transaction Code:</strong> <%= @transaction.transaction_code %></p>
+<p><strong>Status:</strong> <%= @transaction.status.capitalize %></p>
+
+<% if @transaction.status == "approved" %>
+  <p style="color: green;">Your deposit has been approved!</p>
+<% elsif @transaction.status == "pending" %>
+  <p style="color: orange;">Waiting for admin approval...</p>
+<% else %>
+  <p style="color: red;">Your deposit was rejected.</p>
+<% end %>
