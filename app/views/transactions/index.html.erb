@@ -1,23 +1,35 @@
-<h2>Pending Transactions</h2>
-<table>
-  <tr>
-    <th>User</th>
-    <th>Amount</th>
-    <th>Transaction Code</th>
-    <th>Screenshot</th>
-    <th>Action</th>
-  </tr>
+<h2 class="text-2xl font-semibold mb-6">Pending Transactions</h2>
+<% if current_user.admin? %>
 
-  <% @transactions.each do |transaction| %>
+<table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+  <thead class="bg-gray-100 text-left text-sm font-medium text-gray-700">
     <tr>
-      <td><%= transaction.user.email %></td>
-      <td><%= transaction.amount %></td>
-      <td><%= transaction.transaction_code %></td>
-      <td><%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %></td>
-      <td>
-        <%= link_to "Approve", approve_transaction_path(transaction), method: :patch %> |
-        <%= link_to "Reject", reject_transaction_path(transaction), method: :patch %>
-      </td>
+      <th class="px-6 py-3 border-b">User</th>
+      <th class="px-6 py-3 border-b">Amount</th>
+      <th class="px-6 py-3 border-b">Transaction Code</th>
+      <th class="px-6 py-3 border-b">Payment Method</th>
+      <th class="px-6 py-3 border-b">Screenshot</th>
+      <th class="px-6 py-3 border-b">Action</th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody class="text-sm text-gray-600">
+    <% @transactions.each do |transaction| %>
+      <tr class="hover:bg-gray-50 transition-colors">
+        <td class="px-6 py-4 border-b"><%= transaction.user.email %></td>
+        <td class="px-6 py-4 border-b"><%= number_to_currency(transaction.amount) %></td>
+        <td class="px-6 py-4 border-b"><%= transaction.transaction_code %></td>
+        <td class="px-6 py-4 border-b"><%= transaction.payment_method %></td>
+        <td class="px-6 py-4 border-b">
+          <%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %>
+        </td>
+        <% end %>
+        <% if current_user.admin?%>
+        <td class="px-6 py-4 border-b space-x-2">
+          <%= link_to "Approve", approve_transaction_path(transaction), method: :patch, class: "px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition" %>
+          <%= link_to "Reject", reject_transaction_path(transaction), method: :patch, class: "px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition" %>
+        </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

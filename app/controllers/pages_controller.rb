@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def users
+  def index
   end
 
   def admin

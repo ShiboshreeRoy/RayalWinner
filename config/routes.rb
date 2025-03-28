@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :transactions, only: [:index, :new, :create, :show] do
     member do
-      patch :approve
+      get 'approve'
       patch :reject
     end
   end
