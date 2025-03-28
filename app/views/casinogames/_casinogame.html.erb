@@ -1,0 +1,13 @@
+<div id="<%= dom_id casinogame %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= casinogame.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Image:</strong>
+   <% if casinogame.image.attached? %>
+  <%= image_tag casinogame.image %>
+<% end %>
+
+  </div>
+</div>

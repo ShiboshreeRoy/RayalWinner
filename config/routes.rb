@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :casinogames
   namespace :admin do
     get "transactions/index"
     get "transactions/approve"
