@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
+  
   resources :casinogames
-  namespace :admin do
-    get "transactions/index"
-    get "transactions/approve"
-    get "transactions/reject"
-  end
- 
   devise_for :users
-  resources :pages
-  resources :admin
+  resources :admin, only: [:index, :create, :update]
+  resources :your_profile
   
   resources :transactions, only: [:index, :new, :create, :show] do
     member do

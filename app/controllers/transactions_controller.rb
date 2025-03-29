@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
 
   # Action to list all transactions
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.all.includes(:user)
   end
 
   # Action to display the new transaction form

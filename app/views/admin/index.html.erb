@@ -1,4 +1,16 @@
 
-<%= link_to "See Transaction", transactions_path %>
+<% @users.each do |user| %>
+  <p class="text-lg font-semibold"><%= user.email %></p>
+  <%= form_for(user, { url: admin_path(user), remote: true, method: :patch }) do |f| %>
+    <div>
+      <%= f.select :role, User.roles.keys.map { |w| [w.humanize, w] }, {}, class: "rounded-md border-gray-300 shadow-sm text-sm px-3 py-1" %>
+      <%= f.text_field :email, class: "border-gray-300 rounded-md px-3 py-1" %>
+      <%= f.submit "Update", class: "bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" %>
+    </div>
+  <% end %>
+<% end %>
 
-<%= link_to "Create Game", casinogames_path %>
+<div class="mt-10 flex justify-center gap-6">
+  <%= link_to "See Transactions", transactions_path, class: "bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition" %>
+  <%= link_to "Create Game", new_casinogame_path, class: "bg-purple-600 text-white px-5 py-2 rounded-md hover:bg-purple-700 transition" %>
+</div>

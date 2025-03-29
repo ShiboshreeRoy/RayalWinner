@@ -23,12 +23,10 @@
           <%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %>
         </td>
         <% end %>
-        <% if current_user.admin?%>
+        
         <td class="px-6 py-4 border-b space-x-2">
-          <%= link_to "Approve", approve_transaction_path(transaction), method: :patch, class: "px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition" %>
-          <%= link_to "Reject", reject_transaction_path(transaction), method: :patch, class: "px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition" %>
-        </td>
-        <% end %>
+       </td>
+       
       </tr>
     <% end %>
   </tbody>
