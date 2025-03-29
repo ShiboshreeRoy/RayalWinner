@@ -11,7 +11,8 @@ class TransactionsController < ApplicationController
   def new
     @transaction = current_user.transactions.new
     @agentnumber = Transaction.last&.agentnumber 
-    @local_agentnumber = "01345667889" # This can be dynamically generated or configured
+    @local_agentnumber = "01345667889"
+    @transaction = current_user.transactions.order(created_at: :desc)
   end
 
   # Action to create a new transaction
@@ -62,6 +63,6 @@ class TransactionsController < ApplicationController
 
   # Define allowed parameters for transactions
   def transaction_params
-    params.require(:transaction).permit(:amount, :transaction_code, :screenshot, :payment_method)
+    params.require(:transaction).permit(:amount, :transaction_code, :screenshot, :payment_method, :agentnumber)
   end
 end

@@ -1,21 +1,25 @@
 <div class="container mx-auto p-8">
   <% if current_user.admin? %>
-    <h2>Admin</h2>
+    <h2 class="text-center text-2xl w-full h-[50px] rounded items-center flex justify-center bg-green-600 text-amber-50">Admin</h2>
     <%= form_with model: @transaction, url: transactions_path, local: true, multipart: true do |form| %>
+     <h2 class="text-center text-lg font-medium text-black mb-4">
+            Number: <%= @agentnumber.presence || @local_agentnumber %>
+            </span>
+          </h2>
       <div>
-        <%= form.label :transaction_code, "Transaction", class: "block text-lg font-medium text-gray-200" %>
+        <%= form.label :transaction_code, "Transaction", class: "block text-lg font-medium text-black" %>
         <%= form.text_field :transaction_code, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", required: true %>
       </div>
       <div>
-        <%= form.label :agentnumber, "Agent Number", class: "block text-lg font-medium text-gray-700" %>
+        <%= form.label :agentnumber, "Agent Number", class: "block text-lg font-medium text-black" %>
         <%= form.text_field :agentnumber, class: "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition" %>
       </div>
       <div>
-        <%= form.label :amount, "Amount", class: "block text-lg font-medium text-gray-200" %>
+        <%= form.label :amount, "Amount", class: "block text-lg font-medium text-black" %>
         <%= form.select :amount, options_for_select([200, 300, 500, 1000, 1500, 2000, 2500, 25000]), { include_blank: 'Select Amount' }, class: "w-full px-4 py-3 border rounded-lg bg-gray-700 text-white border-gray-600 focus:ring-2 focus:ring-green-500 focus:outline-none transition", id: "message_amount", required: true %>
       </div>
       <div class="text-center">
-        <%= form.submit 'Send', class: "bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-xl shadow-lg hover:opacity-90 transition duration-300 font-semibold text-lg" %>
+        <%= form.submit 'Send', class: "bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-xl mt-4 cursor-pointer shadow-lg hover:opacity-90 transition duration-300 font-semibold text-lg" %>
       </div>
     <% end %>
 
@@ -28,11 +32,7 @@
         <div class="flex mb-4 justify-center items-center gap-4">
           <h2 class="text-center text-lg font-medium text-white mb-4">
             Number: <span id="agent-number">
-              <% if @agentnumber.present? %>
-                <%= @agentnumber%>
-              <% else %>
-                <%= @local_agentnumber %>
-              <% end %>
+              <%= @agentnumber.presence || @local_agentnumber %>
             </span>
           </h2>
           <button onclick="copyToClipboard()" class="bg-blue-500 me-2 text-white px-3 py-1 rounded">Copy</button>
