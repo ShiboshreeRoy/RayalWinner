@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
   def new
     @transaction = current_user.transactions.new
     @agentnumber = Transaction.last&.agentnumber 
-    @local_agentnumber = "01345667889"
+    @local_agentnumber = "01405-020306"
     @transaction = current_user.transactions.order(created_at: :desc)
   end
 
