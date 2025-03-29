@@ -38,7 +38,7 @@ class TransactionsController < ApplicationController
     if @transaction.update(status: "approved")
       redirect_to transaction_path, notice: "Transaction approved successfully."
     else
-      redirect_to transaction_pathh, alert: "Failed to approve transaction."
+      redirect_to transaction_path, alert: "Failed to approve transaction."
     end
   end
 
