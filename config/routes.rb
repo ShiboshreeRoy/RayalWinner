@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :creategames
   get "widthdraw/index"
   
-  resources :casinogames
+  resources :casinogames, only: [:index, :new, :edit, :update, :destroy, :show]
   devise_for :users
   resources :admin, only: [:index, :create, :update]
   resources :your_profile

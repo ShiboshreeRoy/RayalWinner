@@ -9,6 +9,8 @@ class CasinogamesController < ApplicationController
 
   # GET /casinogames/1 or /casinogames/1.json
   def show
+    @casinogame = Casinogame.find(params[:id])
+    @casinogames = Casinogame.all
   end
 
   # GET /casinogames/new
@@ -66,6 +68,6 @@ class CasinogamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def casinogame_params
-      params.require(:casinogame).permit(:name, :image, :users_id)
+      params.require(:casinogame).permit(:name, :image, :description)
     end
 end

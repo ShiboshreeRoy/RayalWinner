@@ -3,8 +3,23 @@
       <% @casinogames.each do |casinogame| %>
        
           <%= render casinogame %>
+         <% if casinogame.present? && current_user.admin? %>
+         
+         <div class="flex justify-between mt-3">
+            <%= link_to edit_casinogame_path(casinogame), class: "bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-blue-600 transition" do %>
+              <i class="fas fa-edit mr-2"></i> Edit
+            <% end %>
+
+            <%= link_to casinogame, method: :delete, data: { confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded-lg flex items-center hover:bg-red-600 transition" do %>
+              <i class="fas fa-trash-alt mr-2"></i> Delete
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
+      
     <% else %>
-      <p class="text-center my-10">No casinogames found.</p>
+      <p class="text-center text-gray-400 my-10 text-lg">
+    <i class="fas fa-exclamation-circle mr-2"></i> No casino games found.
+  </p>
     <% end %>
-  
+ 

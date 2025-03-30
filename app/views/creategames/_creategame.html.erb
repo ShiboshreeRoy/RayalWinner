@@ -1,3 +1,4 @@
+
 <div class="bg-gradient-to-b from-gray-900 to-gray-800 py-12">
   <div class="container mx-auto px-6">
     <!-- Title -->
@@ -5,14 +6,14 @@
     
     <!-- Game Cards Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <% @casinogames.each do |casinogame| %>
+      <% @creategames.each do |creategame| %>
         <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
           <!-- Game Image -->
-          <% if casinogame.image.attached? %>
-            <%= image_tag casinogame.image, class: "w-full h-56 object-cover" %>
+          <% if creategame.image.attached? %>
+            <%= image_tag creategame.image, class: "w-full h-56 object-cover" %>
             <!-- Play Button Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <%= link_to casinogame.description, target: "_blank", class: "bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-yellow-600 hover:to-orange-600 transition-transform duration-200 transform hover:scale-110" do %>
+              <%= link_to creategame.game_url, target: "_blank", class: "bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:from-yellow-600 hover:to-orange-600 transition-transform duration-200 transform hover:scale-110" do %>
                   Play Now
               <% end %>
 
@@ -26,12 +27,12 @@
           <!-- Game Details -->
           <div class="p-6">
             <h3 class="text-xl font-semibold text-white truncate">
-              <%= casinogame.name %>
+              <%= creategame.name %>
             </h3>
           </div>
         </div>
+        
       <% end %>
     </div>
   </div>
 </div>
-
