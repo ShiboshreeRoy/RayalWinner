@@ -8,9 +8,10 @@ class CreategamesController < ApplicationController
 
   # GET /creategames/1 or /creategames/1.json
   def show
-    @creategame = Creategame.find(params[:id])
-    @creategame = Creategame.all
+    @creategame = Creategame.find(params[:id]) # If fetching a single record
+    @creategames = Creategame.all # If fetching all records
   end
+  
 
   # GET /creategames/new
   def new
@@ -19,6 +20,7 @@ class CreategamesController < ApplicationController
 
   # GET /creategames/1/edit
   def edit
+   
   end
 
   # POST /creategames or /creategames.json
