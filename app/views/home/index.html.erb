@@ -43,13 +43,19 @@
                <img 
                   alt="Fast Pub Casino Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/0RPB1d16/Fast-Pub.png"
+                  src="https://i.ibb.co/0RPB1d16/Fast-Pub.png"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                 <% if user_signed_in? %>
+                  <a href="https://examplecasino.com/games/fast-pub" target="_blank">
+                     <button class="casino-play-button px-6 py-3 cursor-pointer text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                  <% end %>
                </div>
             </div>
             <div class="absolute top-2 right-2 casino-chip-label">
@@ -65,13 +71,19 @@
                <img 
                   alt="Chicken Road Slot Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/jPx8jW2g/Chicken-Road.png"
+                  src="https://i.ibb.co/jPx8jW2g/Chicken-Road.png"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                  <% if user_signed_in? %>
+                  <a href="https://maha7.com/single/?sid=825e946b60a8957962010bc9dd3efe6dc27ddf392bf9&game_type=10036&language=en&enable_home=false" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                  <% end %>
                </div>
             </div>
             <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
@@ -84,13 +96,19 @@
                <img 
                   alt="Jili Crazy 777 Slot Machine" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/93kNW14K/JILI-Crazy777.png"
+                  src="https://i.ibb.co/93kNW14K/JILI-Crazy777.png"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                  <% if user_signed_in? %>
+                  <a href="https://wbgame.xtis429q.com/ols2/?ssoKey=3b3a33680f3656cf9c7e6472975836085081f2c3&lang=en-US&apiId=1075&be=moc.q924sitx.ipabewbw&domain_gs=q924sitx&domain_platform=moc.q924sitx.mroftalp-tolsbw&gameID=35&gs=moc.q924sitx.df-tolsbw&legalLang=true" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                <% end %>
                </div>
             </div>
             <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
@@ -103,13 +121,19 @@
                <img 
                   alt="Jili Super Ace Card Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/Y75yv1VB/JILI-Super-Ace.jpg"
+                  src="https://i.ibb.co/Y75yv1VB/JILI-Super-Ace.jpg"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                  <% if user_signed_in?%>
+                  <a href="https://wbgame.xtis429q.com/fullhouse/?ssoKey=43187d31ea89f9548f317c21e31a45f935254bfa&lang=en-US&apiId=1075&be=moc.q924sitx.ipabewbw&domain_gs=q924sitx&domain_platform=moc.q924sitx.mroftalp-tolsbw&gameID=49&gs=moc.q924sitx.df-tolsbw&legalLang=true" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                   <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                  <% end %>
                </div>
             </div>
             <div class="absolute top-2 right-2 casino-chip-label">
@@ -119,19 +143,27 @@
                <p class="text-white font-bold text-lg text-center truncate tracking-wide">JILI SUPER ACE</p>
             </div>
          </div>
+        
+        
          <!-- PG Flirting Scholar -->
          <div class="group relative overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 hover:-translate-y-2">
             <div class="relative aspect-square bg-black/20">
                <img 
                   alt="PG Flirting Scholar Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/tpZHrZx0/PG-Flirting-Scholar.jpg"
+                  src="https://i.ibb.co/tpZHrZx0/PG-Flirting-Scholar.jpg"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                 <% if user_signed_in? %>
+                  <a href="https://m.x1skf.com/61/index.html?ot=60414DF3-B7E5-401D-B5C2-A5E41830F2CA&ops=a65a6e7673cf4ae995e6f053552e2bee&btt=1&l=en&or=04wxexmg%3Db1woj%3Dgsq&__hv=2fMEYCIQDfJIybiQvVrKy4Vt5UfF%2BskGB4S0b0Qz%2FW6UoURx%2FL%2BgIhALQaXa3HqqfRvLM7618qkVezvFJwUug6XnpjFMMjSN5m" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                  <% end %>
                </div>
             </div>
             <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
@@ -144,13 +176,19 @@
                <img 
                   alt="PG Legend of Perse Adventure Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/Z6ndgKMy/PG-Legend-of-Perse.jpg"
+                  src="https://i.ibb.co/Z6ndgKMy/PG-Legend-of-Perse.jpg"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                 <% if user_signed_in? %>
+                  <a href="https://m.zmcyu9ypy.com/128/index.html?ot=60414DF3-B7E5-401D-B5C2-A5E41830F2CA&ops=fbe4d038f58e405ab9bb576805ca1d39&btt=1&l=en&or=10cdkdsm%3Djwmie9izi%3Dmyw&__hv=2fMEQCIF0AoeWP1yXmii9IShaAtLTqXjT9DXx2FLTQI%2FjnX%2B83AiAg2W4MJiQXBLRIIOkDByvG4hHpycRm0Y81Mq6w0OBEeQ%3D%3D" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                <% end %>
                </div>
             </div>
             <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
@@ -163,13 +201,19 @@
                <img 
                   alt="Tower X Casino Game" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/VYGyMRY7/Tower-X.webp"
+                  src="https://i.ibb.co/VYGyMRY7/Tower-X.webp"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                  <% if user_signed_in? %>
+                  <a href="https://jifjie.h9vo10aqz.com/?lang=en&homeUrl&isAPP=false&gameType=14&mType=14061&gName=MayaGoldCrazy_dffd8b5&mute=0&x=e9tkQRED2CAB1BgTMPzjDIPh9P1uWPhwlijd-g1bFw5ScPofelEIAIVAIG7RBXci1DzEd0C_BfvLys7jql8UfxJ2J3ZDlB8Qv6Z21PF34Tg" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                 <% end %>
                </div>
             </div>
             <div class="bg-gradient-to-r from-casino-blue to-casino-purple p-4">
@@ -182,13 +226,19 @@
                <img 
                   alt="Wild Bounty Showdown Slot" 
                   class="w-full h-full object-cover"
-                  src="https://i.ibb.co.com/svTnDGPw/Wild-Bounty-Showdown.jpg"
+                  src="https://i.ibb.co/svTnDGPw/Wild-Bounty-Showdown.jpg"
                   loading="lazy"
-                  >
+               >
                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
-                  ▶ Play Now
-                  </button>
+                  <% if  user_signed_in? %>
+                  <a href="https://m.x1skf.com/135/index.html?ot=60414DF3-B7E5-401D-B5C2-A5E41830F2CA&ops=ff326a980f6041ef9622952c052fb50b&btt=1&l=en&or=24qryrga%3Dv1qid%3Damk&__hv=2fMEYCIQDfJIybiQvVrKy4Vt5UfF%2BskGB4S0b0Qz%2FW6UoURx%2FL%2BgIhALQaXa3HqqfRvLM7618qkVezvFJwUug6XnpjFMMjSN5m" target="_blank">
+                     <button class="casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md">
+                        ▶ Play Now
+                     </button>
+                  </a>
+                  <% else %>
+                  <%=link_to"▶ Play Now",new_user_registration_path, class: "casino-play-button px-6 py-3 text-white font-bold text-lg rounded-lg shadow-lg transition-all duration-300 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md" %>
+                 <% end %>
                </div>
             </div>
             <div class="absolute top-2 right-2 casino-chip-label">
@@ -202,10 +252,10 @@
    </div>
    <style>
       .casino-play-button {
-      @apply bg-gold-500 hover:bg-gold-600 text-black px-8 py-3 rounded-full font-bold uppercase tracking-wider transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl;
+         @apply bg-gold-500 hover:bg-gold-600 text-black px-8 py-3 rounded-full font-bold uppercase tracking-wider transform transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl;
       }
       .casino-chip-label {
-      @apply bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md;
+         @apply bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md;
       }
       .text-gold-500 { color: #FFD700; }
       .bg-gold-500 { background-color: #FFD700; }
@@ -238,8 +288,6 @@
             <p class="text-center text-green-500">MAR 22 - MAY 25</p>
          </div>
       </div>
-   </div>
-   </div>
    </div>
 </body>
 <script>

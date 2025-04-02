@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :transactions, only: [:index, :new, :create, :show] do
     member do
       get 'approve'
-      patch :reject
+      get 'reject'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

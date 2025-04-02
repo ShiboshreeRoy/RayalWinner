@@ -1,38 +1,55 @@
-<h2 class="text-2xl font-semibold mb-6">Pending Transactions</h2>
+<h2 class="text-2xl font-semibold mb-6 text-gray-800">Pending Transactions</h2>
+
 <% if current_user.admin? %>
-
-<table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-  <thead class="bg-gray-100 text-left text-sm font-medium text-gray-700">
-    <tr>
-      <th class="px-6 py-3 border-b">User</th>
-      <th class="px-6 py-3 border-b">Amount</th>
-      <th class="px-6 py-3 border-b">Transaction Code</th>
-      <th class="px-6 py-3 border-b">Payment Method</th>
-      <th class="px-6 py-3 border-b">Screenshot</th>
-        <th class="px-6 py-3 border-b">Time</th>
-      <th class="px-6 py-3 border-b">Action</th>
-    </tr>
-  </thead>
-  <tbody class="text-sm text-gray-600">
-    <% @transactions.each do |transaction| %>
-      <tr class="hover:bg-gray-50 transition-colors">
-        <td class="px-6 py-4 border-b"><%= transaction.user.email %></td>
-        <td class="px-6 py-4 border-b"><%= number_to_currency(transaction.amount) %></td>
-        <td class="px-6 py-4 border-b"><%= transaction.transaction_code %></td>
-        <td class="px-6 py-4 border-b"><%= transaction.payment_method %></td>
-        <td class="px-6 py-4 border-b"><%= transaction.created_at&.strftime("%Y-%m-%d %H:%M:%S") %></td>
-
-        <td class="px-6 py-4 border-b">
-          <%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %>
-        </td>
+  <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr class="text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+          <th class="px-6 py-4">User</th>
+          <th class="px-6 py-4">Amount</th>
+          <th class="px-6 py-4">Transaction Code</th>
+          <th class="px-6 py-4">Payment Method</th>
+          <th class="px-6 py-4">Screenshot</th>
+          <th class="px-6 py-4">Time</th>
+          <th class="px-6 py-4">Action</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
+        <% @transactions.each do |transaction| %>
+          <tr class="hover:bg-gray-100 transition-colors duration-200">
+            <td class="px-6 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <span class="font-medium"><%= transaction.user.email %></span>
+              </div>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="text-green-600 font-semibold"><%= number_to_currency(transaction.amount) %></span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap"><%= transaction.transaction_code %></td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <span class="inline-flex px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full">
+                <%= transaction.payment_method %>
+              </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <% if transaction.screenshot.attached? %>
+                <%= image_tag transaction.screenshot, class: "w-16 h-16 object-cover rounded-md shadow-sm hover:scale-105 transition-transform duration-200", alt: "Transaction Screenshot" %>
+              <% else %>
+                <span class="text-gray-400 italic">No screenshot</span>
+              <% end %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+              <%= transaction.created_at&.strftime("%Y-%m-%d %H:%M:%S") %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap space-x-3">
+              <%= link_to "Approve", approve_transaction_path(transaction), class: "inline-flex items-center px-3 py-1.5 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors duration-200 shadow-sm" %>
+              <%= link_to "Reject", reject_transaction_path(transaction), class: "inline-flex items-center px-3 py-1.5 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors duration-200 shadow-sm" %>
+            </td>
+          </tr>
         <% end %>
-        <% if current_user.admin?%>
-        <td class="px-6 py-4 border-b space-x-2">
-          <%= link_to "Approve",root_path,  class: "px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition" %>
-          <%= link_to "Reject", root_path,  class: "px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition" %>
-        </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p class="text-gray-600 text-center py-6">You do not have permission to view this section.</p>
+<% end %>
