@@ -9,6 +9,7 @@
       <th class="px-6 py-3 border-b">Transaction Code</th>
       <th class="px-6 py-3 border-b">Payment Method</th>
       <th class="px-6 py-3 border-b">Screenshot</th>
+        <th class="px-6 py-3 border-b">Time</th>
       <th class="px-6 py-3 border-b">Action</th>
     </tr>
   </thead>
@@ -19,6 +20,8 @@
         <td class="px-6 py-4 border-b"><%= number_to_currency(transaction.amount) %></td>
         <td class="px-6 py-4 border-b"><%= transaction.transaction_code %></td>
         <td class="px-6 py-4 border-b"><%= transaction.payment_method %></td>
+        <td class="px-6 py-4 border-b"><%= transaction.created_at&.strftime("%Y-%m-%d %H:%M:%S") %></td>
+
         <td class="px-6 py-4 border-b">
           <%= image_tag transaction.screenshot, width: 100 if transaction.screenshot.attached? %>
         </td>
